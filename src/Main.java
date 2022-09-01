@@ -12,9 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
         //task1();
-        //task2();
+        task2();
         //task3();
-        task4();
+        //task4();
 
 
         var wastes = generateRandomArray();
@@ -30,20 +30,14 @@ public class Main {
         int max = wastes[0];
         int min = wastes[0];
         for (int i = 0; i < wastes.length; i++) {
-            if (wastes[i] < min) {
+            if (wastes[i] < min)
                 min = wastes[i];
-            }
+            else max = wastes[i];
+        }
 
-        }
-        for (int i = 0; i < wastes.length; i++) {
-            if (wastes[i] > max) {
-                max = wastes[i];
-            }
-        }
 
         System.out.println("Максимальная сумма трат за день составила " + max + " рублей." + " Минимальная сумма трат за день соствила " + min + " рублей");
     }
-
     public static void task3() {
         var wastes = generateRandomArray();
         int total = 0;
@@ -51,7 +45,7 @@ public class Main {
             total = total + wastes[i];
 
         }
-        System.out.print("Средняя сумма трат за месяц составила " + (float) +total / 30 + " рублей");
+        System.out.print("Средняя сумма трат за месяц составила " + (float) +total / wastes.length + " рублей");
     }
 
     public static void task4() {
